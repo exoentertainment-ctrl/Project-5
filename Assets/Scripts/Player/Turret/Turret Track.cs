@@ -27,26 +27,9 @@ public class TurretTrack : MonoBehaviour
     private float curElevationAngle;
     private bool fullAccess;
 
-    GameObject target;
-
-    private Vector3 priorPos;
-    private Vector3 targetPosOffset;
-    private float lastOffsetCalc;
+    Vector3 targetPos;
 
     #endregion
-
-    // void Rotate()
-    // {
-    //     Ray screenRay = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-    //     RaycastHit hitInfo;
-    //     //Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    //
-    //     if (Physics.Raycast(screenRay, out hitInfo, Mathf.Infinity))
-    //     {
-    //         transform.LookAt(hitInfo.point);
-    //         //mouseIcon.transform.position = hitInfo.point;
-    //     }
-    // }
     
     private void Awake()
     {
@@ -69,6 +52,11 @@ public class TurretTrack : MonoBehaviour
     {
         Rotate();
     }
+
+    public void SetAimPos(Vector3 pos)
+    {
+        targetPos = pos;
+    }
     
     void Rotate()
     {
@@ -79,7 +67,7 @@ public class TurretTrack : MonoBehaviour
                 /////// Heading
                 headingVector =
                     Vector3.Normalize(F3DMath.ProjectVectorOnPlane(headTransform.up,
-                        (target.transform.position + targetPosOffset) - headTransform.position));
+                        targetPos - headTransform.position));
                 float headingAngle =
                     F3DMath.SignedVectorAngle(headTransform.forward, headingVector, headTransform.up);
                 float turretDefaultToTargetAngle = F3DMath.SignedVectorAngle(defaultRot * headTransform.forward,
@@ -112,7 +100,7 @@ public class TurretTrack : MonoBehaviour
                 /////// Elevation
                 Vector3 elevationVector =
                     Vector3.Normalize(F3DMath.ProjectVectorOnPlane(headTransform.right,
-                        (target.transform.position + targetPosOffset) - barrelTransform.position));
+                        targetPos - barrelTransform.position));
                 float elevationAngle =
                     F3DMath.SignedVectorAngle(barrelTransform.forward, elevationVector, headTransform.right);
 
@@ -136,7 +124,7 @@ public class TurretTrack : MonoBehaviour
             Transform barrelY = Swivel.transform;
 
             //finding position for turning just for X axis (down-up)
-            Vector3 targetX = (target.transform.position + targetPosOffset) - barrelX.transform.position;
+            Vector3 targetX = targetPos - barrelX.transform.position;
             Quaternion targetRotationX = Quaternion.LookRotation(targetX, headTransform.up);
 
             barrelX.transform.rotation = Quaternion.SlerpUnclamped(barrelX.transform.rotation, targetRotationX,
@@ -158,7 +146,7 @@ public class TurretTrack : MonoBehaviour
             }
 
             //finding position for turning just for Y axis
-            Vector3 targetY = (target.transform.position + targetPosOffset);
+            Vector3 targetY = targetPos;
             targetY.y = barrelY.position.y;
 
             Quaternion targetRotationY = Quaternion.LookRotation(targetY - barrelY.position, barrelY.transform.up);

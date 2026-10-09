@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c351737812de6547a4b2c70ad98cf8f, type: 3}
+  m_Name: Basic Ballistic Turret - Player
+  m_EditorClassIdentifier: Assembly-CSharp::TurretSO
+  dischargePrefab: {fileID: 0}
+  engageRange: 0
+  minEngageRange: 0
+  fireRate: 0
+  barrelFireDelay: 0
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  asteroidLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  targetPredictionDelay: 0
+  TrackingType: 0
+  HeadingTrackingSpeed: 50
+  ElevationTrackingSpeed: 50
+  HeadingLimit: {x: -180, y: 180}
+  ElevationLimit: {x: -90, y: 20}
+  rofUpgradeAmount: 0
