@@ -7,9 +7,8 @@ public class TurretFire : MonoBehaviour
 {
     #region --Serialized Fields--
 
-    [SerializeField] private int fireRate;
+    [SerializeField] TurretSO turretSO;
     [SerializeField] private Transform[] spawnPoints;
-    [SerializeField] GameObject projectilePrefab;
 
     #endregion
     
@@ -42,7 +41,7 @@ public class TurretFire : MonoBehaviour
     {
         if (isFiring)
         {
-            if (Time.time - lastFireTime > fireRate)
+            if (Time.time - lastFireTime > turretSO.fireRate)
             {
                 StartCoroutine(FireRoutine());
             }
@@ -61,15 +60,6 @@ public class TurretFire : MonoBehaviour
                 projectile.transform.rotation = spawnPoint.rotation;
                 projectile.SetActive(true);
             }
-            
-            // Instantiate(turretSO.projectileSO.projectilePrefab, spawnPoint.position, platformTurret.rotation);
-            
-            // if (turretSO.projectileSO.dischargePrefab != null)
-            //     Instantiate(turretSO.projectileSO.dischargePrefab, spawnPoint.position,
-            //         Quaternion.identity);
-            
-            // Instantiate(turretSO.projectileSO.projectilePrefab,  spawnPoint.position, spawnPoint.rotation);
-
 
             // if (turretSO.dischargePrefab != null)
             // {
@@ -84,8 +74,7 @@ public class TurretFire : MonoBehaviour
             //
             // fireFeedbacks?.PlayFeedbacks();
             
-            // yield return new WaitForSeconds(turretSO.barrelFireDelay);
-            yield return new WaitForSeconds(.5f);
+            yield return new WaitForSeconds(turretSO.barrelFireDelay);
         }
     }
 }

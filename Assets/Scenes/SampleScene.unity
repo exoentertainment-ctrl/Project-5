@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &10725475 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2533857058127310052, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+  m_PrefabInstance: {fileID: 780969895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &117325322
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +323,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8fc6346e15cdc3468f16016dbbae390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputManager
+--- !u!1 &261109836 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6905221701622688399, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+  m_PrefabInstance: {fileID: 780969895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &261109840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261109836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f361235a6f06014cb97f5d35e3aca84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TurretTrack
+  turretSO: {fileID: 11400000, guid: 7f362b53874083c4ba0df17b46eb0b00, type: 2}
+  Mount: {fileID: 962970451}
+  Swivel: {fileID: 261109836}
+  headingVector: {x: 0, y: 0, z: 0}
+--- !u!114 &261109841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261109836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84335ba947e35d45b9fa9dfac7c68df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TurretFire
+  turretSO: {fileID: 11400000, guid: 7f362b53874083c4ba0df17b46eb0b00, type: 2}
+  spawnPoints:
+  - {fileID: 385766101}
+  - {fileID: 1899499215}
+--- !u!114 &261109842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261109836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aefcc6f7e1f73c949891f1e68c9795d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
+  objectToPool: {fileID: 100000, guid: 8f7ae558a5825ea47ad1fb89f12fd98c, type: 3}
+  amountToPool: 10
+  pooledObjects: []
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,6 +545,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!4 &385766101 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6908510061979164779, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+  m_PrefabInstance: {fileID: 780969895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +796,33 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3659013917872870724, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 780969907}
+    - targetCorrespondingSourceObject: {fileID: 2531482934112183808, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2040351204}
+    - targetCorrespondingSourceObject: {fileID: 2531482934112183808, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2040351203}
+    - targetCorrespondingSourceObject: {fileID: 2531482934112183808, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2040351202}
+    - targetCorrespondingSourceObject: {fileID: 4399647081485310175, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1633646957}
+    - targetCorrespondingSourceObject: {fileID: 4399647081485310175, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1633646956}
+    - targetCorrespondingSourceObject: {fileID: 4399647081485310175, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1633646955}
+    - targetCorrespondingSourceObject: {fileID: 6905221701622688399, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 261109842}
+    - targetCorrespondingSourceObject: {fileID: 6905221701622688399, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 261109841}
+    - targetCorrespondingSourceObject: {fileID: 6905221701622688399, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 261109840}
   m_SourcePrefab: {fileID: 100100000, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
 --- !u!1 &780969896 stripped
 GameObject:
@@ -752,10 +841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d524ca3f4b6b6c741af697aa19c1ad26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  accelerateForce: 25
-  decelerateForce: 5
-  maxAccelerateForce: 100
-  rotateAmount: 50
+  shipSO: {fileID: 11400000, guid: 33263df0f6b609347994d15e488f05de, type: 2}
 --- !u!54 &780969898
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -821,10 +907,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d84335ba947e35d45b9fa9dfac7c68df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretFire
-  fireRate: 1
+  turretSO: {fileID: 11400000, guid: 7f362b53874083c4ba0df17b46eb0b00, type: 2}
   spawnPoints:
   - {fileID: 1495492534}
-  projectilePrefab: {fileID: 100000, guid: 8f7ae558a5825ea47ad1fb89f12fd98c, type: 3}
+  - {fileID: 2109900984}
 --- !u!114 &780969907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -889,6 +975,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &923146075 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4403899824251775429, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+  m_PrefabInstance: {fileID: 780969895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &962970451 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6906110005898845763, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+  m_PrefabInstance: {fileID: 780969895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &970949283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -977,6 +1073,42 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2040351202}
+        m_TargetAssemblyTypeName: TurretTrack, Assembly-CSharp
+        m_MethodName: SetAimPos
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1633646955}
+        m_TargetAssemblyTypeName: TurretTrack, Assembly-CSharp
+        m_MethodName: SetAimPos
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 261109840}
+        m_TargetAssemblyTypeName: TurretTrack, Assembly-CSharp
+        m_MethodName: SetAimPos
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   fireListeners:
     m_PersistentCalls:
       m_Calls:
@@ -992,9 +1124,60 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2040351203}
+        m_TargetAssemblyTypeName: TurretFire, Assembly-CSharp
+        m_MethodName: ChangeFireState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1633646956}
+        m_TargetAssemblyTypeName: TurretFire, Assembly-CSharp
+        m_MethodName: ChangeFireState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 261109841}
+        m_TargetAssemblyTypeName: TurretFire, Assembly-CSharp
+        m_MethodName: ChangeFireState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   secondaryFireListeners:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1275542908 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2531738396832731852, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+  m_PrefabInstance: {fileID: 780969895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1349384276 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4403808718068161793, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+  m_PrefabInstance: {fileID: 780969895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1402839948 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2533945125110363978, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+  m_PrefabInstance: {fileID: 780969895}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1455863641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3657736682639720720, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
@@ -1005,6 +1188,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3662559436335861058, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
   m_PrefabInstance: {fileID: 780969895}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1582284189 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4398651596107009163, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+  m_PrefabInstance: {fileID: 780969895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1633646951 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4399647081485310175, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+  m_PrefabInstance: {fileID: 780969895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1633646955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633646951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f361235a6f06014cb97f5d35e3aca84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TurretTrack
+  turretSO: {fileID: 11400000, guid: 7f362b53874083c4ba0df17b46eb0b00, type: 2}
+  Mount: {fileID: 1582284189}
+  Swivel: {fileID: 1633646951}
+  headingVector: {x: 0, y: 0, z: 0}
+--- !u!114 &1633646956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633646951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84335ba947e35d45b9fa9dfac7c68df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TurretFire
+  turretSO: {fileID: 11400000, guid: 7f362b53874083c4ba0df17b46eb0b00, type: 2}
+  spawnPoints:
+  - {fileID: 923146075}
+  - {fileID: 1349384276}
+--- !u!114 &1633646957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633646951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aefcc6f7e1f73c949891f1e68c9795d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
+  objectToPool: {fileID: 100000, guid: 8f7ae558a5825ea47ad1fb89f12fd98c, type: 3}
+  amountToPool: 10
+  pooledObjects: []
 --- !u!1 &1685334680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,6 +1352,125 @@ MonoBehaviour:
     Time: 0.5
     Smoothing: 0.5
     IgnoreY: 0
+--- !u!4 &1899499215 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6908387103193217989, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+  m_PrefabInstance: {fileID: 780969895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2040351198 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2531482934112183808, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+  m_PrefabInstance: {fileID: 780969895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2040351202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040351198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f361235a6f06014cb97f5d35e3aca84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TurretTrack
+  turretSO: {fileID: 11400000, guid: 7f362b53874083c4ba0df17b46eb0b00, type: 2}
+  Mount: {fileID: 1275542908}
+  Swivel: {fileID: 2040351198}
+  headingVector: {x: 0, y: 0, z: 0}
+--- !u!114 &2040351203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040351198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d84335ba947e35d45b9fa9dfac7c68df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TurretFire
+  turretSO: {fileID: 11400000, guid: 7f362b53874083c4ba0df17b46eb0b00, type: 2}
+  spawnPoints:
+  - {fileID: 10725475}
+  - {fileID: 1402839948}
+--- !u!114 &2040351204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040351198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aefcc6f7e1f73c949891f1e68c9795d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectPool
+  objectToPool: {fileID: 100000, guid: 8f7ae558a5825ea47ad1fb89f12fd98c, type: 3}
+  amountToPool: 10
+  pooledObjects: []
+--- !u!4 &2109900984 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3663102206182672364, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
+  m_PrefabInstance: {fileID: 780969895}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4316293108277241404
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2719246391597056930, guid: 464af6f5f590c184782eef157f08c4fa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 486.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2719246391597056930, guid: 464af6f5f590c184782eef157f08c4fa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 2719246391597056930, guid: 464af6f5f590c184782eef157f08c4fa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1855.095
+      objectReference: {fileID: 0}
+    - target: {fileID: 2719246391597056930, guid: 464af6f5f590c184782eef157f08c4fa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2719246391597056930, guid: 464af6f5f590c184782eef157f08c4fa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2719246391597056930, guid: 464af6f5f590c184782eef157f08c4fa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2719246391597056930, guid: 464af6f5f590c184782eef157f08c4fa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2719246391597056930, guid: 464af6f5f590c184782eef157f08c4fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2719246391597056930, guid: 464af6f5f590c184782eef157f08c4fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2719246391597056930, guid: 464af6f5f590c184782eef157f08c4fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7653044658133014499, guid: 464af6f5f590c184782eef157f08c4fa, type: 3}
+      propertyPath: m_Name
+      value: Test enemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 464af6f5f590c184782eef157f08c4fa, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1123,3 +1482,4 @@ SceneRoots:
   - {fileID: 780969895}
   - {fileID: 970949283}
   - {fileID: 1685334684}
+  - {fileID: 4316293108277241404}

@@ -5,11 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     #region --Serialize Field--
 
-    [SerializeField] float accelerateForce;
-    [SerializeField] float decelerateForce;
-    [SerializeField] private float maxAccelerateForce;
-
-    [SerializeField] private int rotateAmount;
+    [SerializeField] private BaseShipSO shipSO;
 
     #endregion
 
@@ -24,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     bool isRotatingLeft;
     bool isRotatingRight;
     
-    float currentAccelerateForce;
     private Vector3 currentSpeed;
 
     private void Awake()
@@ -63,8 +58,8 @@ public class PlayerMovement : MonoBehaviour
         //If player is pressing move button, accelerate ship until it hits the max speed
         if (isAccelerating)
         {
-            if (currentSpeed.z < maxAccelerateForce)
-                currentSpeed.z += accelerateForce * Time.fixedDeltaTime;
+            if (currentSpeed.z < shipSO.maxAccelerateForce)
+                currentSpeed.z += shipSO.accelerateForce * Time.fixedDeltaTime;
             
             rb.linearVelocity = transform.forward * currentSpeed.z;
         }
@@ -73,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (currentSpeed.z > 0)
             {
-                currentSpeed.z -= decelerateForce * Time.fixedDeltaTime;
+                currentSpeed.z -= shipSO.decelerateForce * Time.fixedDeltaTime;
                 
                 if(currentSpeed.z < 0)
                     currentSpeed.z = 0;
@@ -86,8 +81,8 @@ public class PlayerMovement : MonoBehaviour
     void Rotate()
     {
         if(isRotatingLeft)
-            transform.Rotate(Vector3.up * (-rotateAmount * Time.fixedDeltaTime));
+            transform.Rotate(Vector3.up * (-shipSO.turnSpeed * Time.fixedDeltaTime));
         else if(isRotatingRight)
-            transform.Rotate(Vector3.up * (rotateAmount * Time.fixedDeltaTime));
+            transform.Rotate(Vector3.up * (shipSO.turnSpeed * Time.fixedDeltaTime));
     }
 }

@@ -9,11 +9,9 @@ public class TurretSO : ScriptableObject
     public GameObject dischargePrefab;
     //public AudioClipSO[] fireSFX;
     public int engageRange;
-    public int minEngageRange;
     public float fireRate;
     public float barrelFireDelay;
     public LayerMask targetLayers;
-    public LayerMask asteroidLayer;
     
     #endregion
 
@@ -31,12 +29,6 @@ public class TurretSO : ScriptableObject
         Step,
         Smooth,
     }
-
-    #endregion
-
-    #region Upgrade Variables
-
-    public float rofUpgradeAmount;
 
     #endregion
 }

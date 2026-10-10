@@ -14,13 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TurretSO
   dischargePrefab: {fileID: 0}
   engageRange: 0
-  minEngageRange: 0
-  fireRate: 0
-  barrelFireDelay: 0
+  fireRate: 1
+  barrelFireDelay: 0.5
   targetLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  asteroidLayer:
     serializedVersion: 2
     m_Bits: 0
   targetPredictionDelay: 0
@@ -29,4 +25,3 @@ MonoBehaviour:
   ElevationTrackingSpeed: 50
   HeadingLimit: {x: -180, y: 180}
   ElevationLimit: {x: -90, y: 20}
-  rofUpgradeAmount: 0

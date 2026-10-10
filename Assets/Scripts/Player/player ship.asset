@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cec2a09648e6e5845b93de70df796068, type: 3}
+  m_Name: player ship
+  m_EditorClassIdentifier: Assembly-CSharp::BaseShipSO
+  maxHealth: 0
+  maxShield: 0
+  lowShieldPercentage: 0
+  upgradeAmount: 0
+  explosionPrefab: {fileID: 0}
+  numExplosions: 0
+  explosionFrequency: 0
+  shieldRechargeRate: 0
+  shieldDownDuration: 0
+  accelerateForce: 20
+  decelerateForce: 5
+  maxAccelerateForce: 100
+  turnSpeed: 10
+  obstacleLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  targetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  finalExplosionPrefab: {fileID: 0}
