@@ -14,7 +14,7 @@ public class TurretManager : MonoBehaviour
 
     private void Start()
     {
-        InputManager.instance.SetTurretManagerListener(InvokeFireListeners);
+        InputManager.instance?.SetTurretManagerListener(InvokeFireListeners);
     }
     
     // Update is called once per frame

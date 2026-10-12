@@ -6,7 +6,8 @@ public class BaseEntitySO : ScriptableObject
     public int maxShield;
     public float lowShieldPercentage;
     
-    public float upgradeAmount;
+    public int blastRadius;
+    public int blastDamage;
     public GameObject[] explosionPrefab;
     public int numExplosions;
     public float explosionFrequency;

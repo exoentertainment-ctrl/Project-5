@@ -6,13 +6,14 @@ using UnityEngine.Events;
 using Unity.Mathematics;
 using Random = UnityEngine.Random;
 
-public class ShipHealth : MonoBehaviour
+public class ShipHealth : MonoBehaviour, IHealth
 {
     #region Serialized Fields
 
     [SerializeField] private BaseShipSO shipSO;
     [SerializeField] UnityEvent onShipDeath;
     [SerializeField] MMFeedbacks deathFeedbacks;
+    [SerializeField] bool showGizmos;
 
     #endregion
 
@@ -23,7 +24,7 @@ public class ShipHealth : MonoBehaviour
     private float currentHealth;
     private bool isHit;
     private bool isDead;
-
+    
     #endregion
 
     private void Awake()
@@ -92,8 +93,31 @@ public class ShipHealth : MonoBehaviour
     {
         if (other.gameObject.tag == "Terrain")
         {
-            Instantiate(shipSO.finalExplosionPrefab[Random.Range(0, shipSO.finalExplosionPrefab.Length)], other.contacts[0].point, Quaternion.identity);
-            Destroy(gameObject);
+            ExplodeShip(other.contacts[0].point);
         }
+    }
+
+    void ExplodeShip(Vector3 pos)
+    {
+        Instantiate(shipSO.finalExplosionPrefab[Random.Range(0, shipSO.finalExplosionPrefab.Length)], pos, Quaternion.identity);
+        
+        Collider[] colliders = Physics.OverlapSphere(transform.position, shipSO.blastRadius);
+        if (colliders.Length > 0)
+        {
+            foreach (var col in colliders)
+            {
+                col.TryGetComponent(out ShipHealth shipHealth);
+                if(shipHealth != null)
+                    shipHealth?.TakeDamage(currentHealth);
+            }
+        }
+        
+        Destroy(gameObject);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if(showGizmos)
+            Gizmos.DrawWireSphere(transform.position, shipSO.blastRadius);
     }
 }
