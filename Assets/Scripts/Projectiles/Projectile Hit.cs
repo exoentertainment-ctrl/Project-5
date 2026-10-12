@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ProjectileHit : MonoBehaviour
 {
@@ -25,12 +26,13 @@ public class ProjectileHit : MonoBehaviour
     
     private void OnCollisionEnter(Collision other)
     {
+        
         other.gameObject.TryGetComponent<ShipHealth>(out var shipHealth);
         if(shipHealth != null)
             shipHealth.TakeDamage(projectileSO.damage);
         
-        if(projectileSO.impactPrefab != null)
-            Instantiate(projectileSO.impactPrefab, other.contacts[0].point, transform.rotation);
+        if(projectileSO.impactPrefab.Length > 0)
+            Instantiate(projectileSO.impactPrefab[Random.Range(0, projectileSO.impactPrefab.Length)], other.contacts[0].point, transform.rotation);
         
         gameObject.SetActive(false);
     }

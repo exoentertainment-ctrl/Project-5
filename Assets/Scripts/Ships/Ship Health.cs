@@ -55,7 +55,7 @@ public class ShipHealth : MonoBehaviour
                 onShipDeath?.Invoke();
                 rigidBody.useGravity = true;
 
-                //StartCoroutine(ExplodeRoutine());
+                StartCoroutine(ExplodeRoutine());
             }
         }
     }
@@ -76,8 +76,8 @@ public class ShipHealth : MonoBehaviour
                 Random.Range(shipCollider.bounds.center.z - shipCollider.bounds.size.z / 2,
                     shipCollider.bounds.center.z + shipCollider.bounds.size.z / 2));
             
-            if(shipSO.explosionPrefab  != null)
-                Instantiate(shipSO.explosionPrefab,  randomSpot, Quaternion.identity);
+            if(shipSO.explosionPrefab.Length  > 0)
+                Instantiate(shipSO.explosionPrefab[Random.Range(0, shipSO.explosionPrefab.Length)],  randomSpot, Quaternion.identity);
             
             // if(AudioManager.instance != null)
             //     if(shipSO.smallExplosion  != null)
@@ -85,17 +85,15 @@ public class ShipHealth : MonoBehaviour
             //         
             // deathFeedbacks?.PlayFeedbacks();
             //
-            if (x == (shipSO.numExplosions - 1))
-            {
-                yield return new WaitForSeconds(shipSO.explosionFrequency);
-                Instantiate(shipSO.finalExplosionPrefab, transform.position, Quaternion.identity);
-                
-                // if(AudioManager.instance != null)
-                //     if(shipSO.finalExplosion  != null)
-                //         AudioManager.instance.PlaySound(shipSO.finalExplosion, transform.position);
-            }
         }
-        
-        Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Terrain")
+        {
+            Instantiate(shipSO.finalExplosionPrefab[Random.Range(0, shipSO.finalExplosionPrefab.Length)], other.contacts[0].point, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }

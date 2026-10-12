@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27baf6d0151aa984ab46bc55aa3f94ee, type: 3}
+  m_Name: test missile
+  m_EditorClassIdentifier: Assembly-CSharp::TrackingProjectileSO
+  impactPrefab:
+  - {fileID: 1043624379182380, guid: 2d62aa2c6730e654ca945aa755b91022, type: 3}
+  - {fileID: 1824402899247718, guid: 8fcfebb7185485d45bef7a5416410d25, type: 3}
+  - {fileID: 1593023632951020, guid: b038f10b3a674b64daf52be8b192f8a5, type: 3}
+  moveSpeed: 7000
+  lifetime: 10
+  damage: 10
+  targetLayers:
+    serializedVersion: 2
+    m_Bits: 1
+  turnSpeed: 5
+  coastSpeed: 0
+  coastDuration: 0

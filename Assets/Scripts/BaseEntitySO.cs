@@ -7,7 +7,7 @@ public class BaseEntitySO : ScriptableObject
     public float lowShieldPercentage;
     
     public float upgradeAmount;
-    public GameObject explosionPrefab;
+    public GameObject[] explosionPrefab;
     public int numExplosions;
     public float explosionFrequency;
 }

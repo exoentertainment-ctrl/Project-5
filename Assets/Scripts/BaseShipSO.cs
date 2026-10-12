@@ -31,7 +31,7 @@ public class BaseShipSO : BaseEntitySO
 
     #region Explosion  Variables
     
-    public GameObject finalExplosionPrefab;
+    public GameObject[] finalExplosionPrefab;
 
     #endregion
 }

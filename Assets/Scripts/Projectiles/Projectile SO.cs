@@ -5,7 +5,7 @@ public class ProjectileSO : ScriptableObject
 {
     #region Prefabs
     
-    public GameObject impactPrefab;
+    public GameObject[] impactPrefab;
 
     #endregion
     

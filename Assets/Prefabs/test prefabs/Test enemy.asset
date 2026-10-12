@@ -16,9 +16,12 @@ MonoBehaviour:
   maxShield: 0
   lowShieldPercentage: 0
   upgradeAmount: 0
-  explosionPrefab: {fileID: 0}
-  numExplosions: 0
-  explosionFrequency: 0
+  explosionPrefab:
+  - {fileID: 1043624379182380, guid: 2d62aa2c6730e654ca945aa755b91022, type: 3}
+  - {fileID: 1824402899247718, guid: 8fcfebb7185485d45bef7a5416410d25, type: 3}
+  - {fileID: 1593023632951020, guid: b038f10b3a674b64daf52be8b192f8a5, type: 3}
+  numExplosions: 5
+  explosionFrequency: 1
   shieldRechargeRate: 0
   shieldDownDuration: 0
   accelerateForce: 0
@@ -31,4 +34,5 @@ MonoBehaviour:
   targetLayerMask:
     serializedVersion: 2
     m_Bits: 0
-  finalExplosionPrefab: {fileID: 0}
+  finalExplosionPrefab:
+  - {fileID: 1854104233019004, guid: de9ee3788be08e3458df26109e3912f3, type: 3}

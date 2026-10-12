@@ -21,7 +21,7 @@ MonoBehaviour:
     m_Bits: 0
   targetPredictionDelay: 0
   TrackingType: 0
-  HeadingTrackingSpeed: 50
-  ElevationTrackingSpeed: 50
+  HeadingTrackingSpeed: 150
+  ElevationTrackingSpeed: 150
   HeadingLimit: {x: -180, y: 180}
   ElevationLimit: {x: -90, y: 20}
