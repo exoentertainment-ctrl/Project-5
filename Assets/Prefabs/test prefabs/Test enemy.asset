@@ -15,8 +15,9 @@ MonoBehaviour:
   maxHealth: 10
   maxShield: 0
   lowShieldPercentage: 0
-  blastRadius: 100
+  blastRadius: 250
   blastDamage: 0
+  blastForce: 0
   explosionPrefab:
   - {fileID: 1043624379182380, guid: 2d62aa2c6730e654ca945aa755b91022, type: 3}
   - {fileID: 1824402899247718, guid: 8fcfebb7185485d45bef7a5416410d25, type: 3}

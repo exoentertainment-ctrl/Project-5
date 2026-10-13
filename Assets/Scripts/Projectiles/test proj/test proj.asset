@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63cdc10218a1eb3418b3f9ad779b3068, type: 3}
   m_Name: test proj
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileSO
-  impactPrefab: {fileID: 0}
+  impactPrefab: []
   moveSpeed: 200
   lifetime: 1
   damage: 1

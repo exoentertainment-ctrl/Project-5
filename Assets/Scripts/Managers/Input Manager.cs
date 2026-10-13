@@ -27,7 +27,6 @@ public class InputManager : MonoBehaviour
     public void SetTurretManagerListener(UnityAction turretManagerAction)
     {
         turretManagerListener.AddListener(turretManagerAction);
-        
     }
     
     #region --Movement--

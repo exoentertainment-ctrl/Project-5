@@ -8,6 +8,7 @@ public class BaseEntitySO : ScriptableObject
     
     public int blastRadius;
     public int blastDamage;
+    public int blastForce;
     public GameObject[] explosionPrefab;
     public int numExplosions;
     public float explosionFrequency;

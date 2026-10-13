@@ -27,12 +27,15 @@ public class ProjectileHit : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         
-        other.gameObject.TryGetComponent<ShipHealth>(out var shipHealth);
-        if(shipHealth != null)
+        other.gameObject.TryGetComponent<IHealth>(out var shipHealth);
+        if (shipHealth != null)
+        {
             shipHealth.TakeDamage(projectileSO.damage);
+        }
+        
         
         if(projectileSO.impactPrefab.Length > 0)
-            Instantiate(projectileSO.impactPrefab[Random.Range(0, projectileSO.impactPrefab.Length)], other.contacts[0].point, transform.rotation);
+             Instantiate(projectileSO.impactPrefab[Random.Range(0, projectileSO.impactPrefab.Length)], other.contacts[0].point, transform.rotation);
         
         gameObject.SetActive(false);
     }

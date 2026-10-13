@@ -84,7 +84,7 @@ public class ShipHealth : MonoBehaviour, IHealth
             //     if(shipSO.smallExplosion  != null)
             //         AudioManager.instance.PlaySound(shipSO.smallExplosion, transform.position);
             //         
-            // deathFeedbacks?.PlayFeedbacks();
+
             //
         }
     }
@@ -100,6 +100,7 @@ public class ShipHealth : MonoBehaviour, IHealth
     void ExplodeShip(Vector3 pos)
     {
         Instantiate(shipSO.finalExplosionPrefab[Random.Range(0, shipSO.finalExplosionPrefab.Length)], pos, Quaternion.identity);
+        rigidBody.AddExplosionForce( shipSO.blastForce, transform.position, shipSO.blastRadius);
         
         Collider[] colliders = Physics.OverlapSphere(transform.position, shipSO.blastRadius);
         if (colliders.Length > 0)
@@ -112,6 +113,7 @@ public class ShipHealth : MonoBehaviour, IHealth
             }
         }
         
+        deathFeedbacks?.PlayFeedbacks();
         Destroy(gameObject);
     }
 
