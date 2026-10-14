@@ -33,7 +33,6 @@ public class ProjectileHit : MonoBehaviour
             shipHealth.TakeDamage(projectileSO.damage);
         }
         
-        
         if(projectileSO.impactPrefab.Length > 0)
              Instantiate(projectileSO.impactPrefab[Random.Range(0, projectileSO.impactPrefab.Length)], other.contacts[0].point, transform.rotation);
         

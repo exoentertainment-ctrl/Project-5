@@ -63,10 +63,21 @@ public class TurretFire : MonoBehaviour
         foreach (Transform spawnPoint in spawnPoints)
         {
             GameObject projectile = projectilePool.GetPooledObject(); 
-            if (projectile != null) {
+            if (projectile != null) 
+            {
                 projectile.transform.position = spawnPoint.position;
                 projectile.transform.rotation = spawnPoint.rotation;
                 projectile.SetActive(true);
+                
+                if (isGuidedTurret)
+                {
+                    projectile.TryGetComponent(out ProjectileHomingMove projectileHomingMove);
+                    if (projectileHomingMove != null)
+                    {
+                        projectileHomingMove.SetTarget(target);
+
+                    }
+                }
             }
 
             // if (turretSO.dischargePrefab != null)
