@@ -7,7 +7,8 @@ public class TurretManager : MonoBehaviour
     #region  --Serialized Fields --
 
     [SerializeField] private UnityEvent<Vector3> aimListeners;
-    [SerializeField] private UnityEvent fireListeners;
+    [SerializeField] private UnityEvent unguidedPrimaryListeners;
+    [SerializeField] private UnityEvent<GameObject> guidedPrimaryListeners;
     [SerializeField] UnityEvent secondaryFireListeners;
 
     #endregion
@@ -34,6 +35,12 @@ public class TurretManager : MonoBehaviour
 
     void InvokeFireListeners()
     {
-        fireListeners?.Invoke();
+        unguidedPrimaryListeners?.Invoke();
+        
+        Ray screenRay = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+        RaycastHit hitInfo;
+        
+        if (Physics.Raycast(screenRay, out hitInfo, Mathf.Infinity))
+            guidedPrimaryListeners?.Invoke(hitInfo.collider.gameObject);
     }
 }

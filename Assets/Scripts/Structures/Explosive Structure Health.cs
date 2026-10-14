@@ -42,6 +42,7 @@ public class ExplosiveStructureHealth : MonoBehaviour, IHealth
             }
         }
     }
+    
 
     void Explode()
     {
@@ -55,15 +56,15 @@ public class ExplosiveStructureHealth : MonoBehaviour, IHealth
         Collider[] colliders = Physics.OverlapSphere(transform.position, structureSO.blastRadius);
         if (colliders.Length > 0)
         {
-            
             foreach (var col in colliders)
             {
-                Debug.Log(col.name);
                 col.TryGetComponent(out IHealth iHealth);
                 if(iHealth != null)
                     iHealth?.TakeDamage(structureSO.blastDamage);
             }
         }
+        
+        feedbacks?.PlayFeedbacks();
         
         Destroy(gameObject);
     }

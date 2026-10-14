@@ -17,4 +17,4 @@ MonoBehaviour:
   - {fileID: 1053484609724754, guid: 530e27e083624874282a82941533de8c, type: 3}
   blastRadius: 250
   blastDamage: 15
-  blastForce: 0
+  blastForce: 10

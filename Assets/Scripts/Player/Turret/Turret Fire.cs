@@ -8,6 +8,7 @@ public class TurretFire : MonoBehaviour
     #region --Serialized Fields--
 
     [SerializeField] TurretSO turretSO;
+    [SerializeField] private bool isGuidedTurret;
     [SerializeField] private Transform[] spawnPoints;
 
     #endregion
@@ -16,6 +17,8 @@ public class TurretFire : MonoBehaviour
     private bool isFiring;
 
     ObjectPool projectilePool;
+
+    private GameObject target;
     
     private void Awake()
     {
@@ -46,6 +49,11 @@ public class TurretFire : MonoBehaviour
                 StartCoroutine(FireRoutine());
             }
         }
+    }
+
+    public void SetTarget(GameObject newTarget)
+    {
+        target = newTarget;
     }
     
     protected virtual IEnumerator FireRoutine()

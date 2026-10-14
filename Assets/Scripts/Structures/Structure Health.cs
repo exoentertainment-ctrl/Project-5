@@ -35,8 +35,20 @@ public class StructureHealth : MonoBehaviour, IHealth
             if (currentHealth <= 0 && !isDead)
             {
                 isDead = true;
-
+                CollapseStructures();
             }
         }
+    }
+
+    void CollapseStructures()
+    {
+        foreach (var rb in rigidBodies)
+        {
+            
+            rb.constraints = RigidbodyConstraints.None;
+            rb.AddExplosionForce(structureSO.blastForce, transform.position, structureSO.blastRadius, -structureSO.upwardsExplosionModifier, ForceMode.Impulse);
+        }
+
+        Destroy(gameObject, structureSO.lifetime);
     }
 }

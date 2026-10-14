@@ -20,13 +20,14 @@ public class InputManager : MonoBehaviour
         }
 
         instance = this;
+        DontDestroyOnLoad(gameObject);
         
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     public void SetTurretManagerListener(UnityAction turretManagerAction)
     {
-        turretManagerListener.AddListener(turretManagerAction);
+        turretManagerListener?.AddListener(turretManagerAction);
     }
     
     #region --Movement--

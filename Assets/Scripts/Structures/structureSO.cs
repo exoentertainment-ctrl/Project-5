@@ -4,6 +4,8 @@ using UnityEngine;
 public class structureSO : ScriptableObject
 {
     public int maxHealth;
+    public int lifetime;
+    public float upwardsExplosionModifier;
     public GameObject[] explosionPrefabs;
     
     public int blastRadius;
