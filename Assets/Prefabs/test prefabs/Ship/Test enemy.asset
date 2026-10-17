@@ -36,5 +36,7 @@ MonoBehaviour:
   targetLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  smallExplosionSFX:
+  - {fileID: 11400000, guid: 819f92d3971da454e8f80aeaf7f45568, type: 2}
   finalExplosionPrefab:
   - {fileID: 1854104233019004, guid: de9ee3788be08e3458df26109e3912f3, type: 3}

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(ObjectPool))]
 public class TurretFire : MonoBehaviour
@@ -80,16 +81,16 @@ public class TurretFire : MonoBehaviour
                 }
             }
 
-            // if (turretSO.dischargePrefab != null)
-            // {
-            //     GameObject muzzle = Instantiate(turretSO.dischargePrefab, spawnPoint.position,
-            //         spawnPoint.rotation);
-            //     Destroy(muzzle, .1f);
-            // }
-            //
-            // if(turretSO.fireSFX != null)
-            //     if(AudioManager.instance != null)
-            //         AudioManager.instance.PlaySound(turretSO.fireSFX[Random.Range(0, turretSO.fireSFX.Length)], transform.position);
+            if (turretSO.dischargePrefab != null)
+            {
+                GameObject muzzle = Instantiate(turretSO.dischargePrefab, spawnPoint.position,
+                    spawnPoint.rotation);
+                Destroy(muzzle, .1f);
+            }
+            
+            if(turretSO.fireSFX != null)
+                if(AudioManager.instance != null)
+                    AudioManager.instance.PlaySound(turretSO.fireSFX[Random.Range(0, turretSO.fireSFX.Length)], transform.position);
             //
             // fireFeedbacks?.PlayFeedbacks();
             

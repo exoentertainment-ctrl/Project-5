@@ -140,6 +140,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1052039839353338, guid: b506b71189d3c4446a68a53dcac5366b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1297639563046934, guid: b506b71189d3c4446a68a53dcac5366b, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -472,6 +476,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d725a6f9-d461-4757-a26d-af6f47729519
     m_ActionName: 'Player/Left Mouse[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 117325325}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: MouseScroll
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9dfa77e4-1000-43c9-bd53-88fbad6eab87
+    m_ActionName: 'Player/Zoom[/Mouse/scroll]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 
@@ -1051,7 +1071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bf0463a376634bd41b45690b2881a262, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1111235479317206226, guid: bf0463a376634bd41b45690b2881a262, type: 3}
       propertyPath: m_Convex
@@ -1547,7 +1567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3659013917872870724, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3752859972434568782, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
       propertyPath: m_Layer
@@ -2102,10 +2122,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1834baafc061824d8f6174c9e3db8fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretManager
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
   aimListeners:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 43427402}
+      - m_Target: {fileID: 780969905}
         m_TargetAssemblyTypeName: TurretTrack, Assembly-CSharp
         m_MethodName: SetAimPos
         m_Mode: 0
@@ -2123,22 +2146,10 @@ MonoBehaviour:
   guidedPrimaryListeners:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 43427401}
+      - m_Target: {fileID: 780969906}
         m_TargetAssemblyTypeName: TurretFire, Assembly-CSharp
         m_MethodName: ChangeFireState
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 43427401}
-        m_TargetAssemblyTypeName: TurretFire, Assembly-CSharp
-        m_MethodName: SetTarget
-        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4896,6 +4907,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6908387103193217989, guid: 26cd8bf2dfaca4bd4bb9664f23366bf8, type: 3}
   m_PrefabInstance: {fileID: 780969895}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1938194266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1938194268}
+  - component: {fileID: 1938194267}
+  m_Layer: 0
+  m_Name: Camera Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1938194267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938194266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2968ff06d81b857448918173d25a43cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraManager
+  camera: {fileID: 1685334683}
+  positionComposer: {fileID: 1685334685}
+  scrollAmount: 5
+  maxScrollAmount: 100
+--- !u!4 &1938194268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938194266}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 705.6684, y: 443.71542, z: 1653.4468}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1948672209
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4935,6 +4994,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ce844e885490a4c922cba566035c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthPassthrough
+--- !u!1 &2028197548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2028197550}
+  - component: {fileID: 2028197549}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2028197549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028197548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a2065d753f0534cbe0329ea5e0b4d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  minDistanceRolloff: 0
+  maxDistanceRolloff: 0
+  musicClips: []
+  uiAudioClips: {fileID: 0}
+--- !u!4 &2028197550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2028197548}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 705.6684, y: 443.71542, z: 1653.4468}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2033893450
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5194,7 +5301,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2719246391597056930, guid: 464af6f5f590c184782eef157f08c4fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 671
+      value: 584.2
       objectReference: {fileID: 0}
     - target: {fileID: 2719246391597056930, guid: 464af6f5f590c184782eef157f08c4fa, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5202,7 +5309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2719246391597056930, guid: 464af6f5f590c184782eef157f08c4fa, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1855.095
+      value: 1982.8
       objectReference: {fileID: 0}
     - target: {fileID: 2719246391597056930, guid: 464af6f5f590c184782eef157f08c4fa, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5588,7 +5695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6860257462716391335, guid: a0317ed9f037ee5478f38b6e891e77c3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5611,3 +5718,5 @@ SceneRoots:
   - {fileID: 8864335572270431973}
   - {fileID: 750196615}
   - {fileID: 2039713609}
+  - {fileID: 1938194268}
+  - {fileID: 2028197550}

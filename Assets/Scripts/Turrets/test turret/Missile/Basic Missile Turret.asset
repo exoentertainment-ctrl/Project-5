@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c351737812de6547a4b2c70ad98cf8f, type: 3}
-  m_Name: Basic Ballistic Turret - Player
+  m_Name: Basic Missile Turret
   m_EditorClassIdentifier: Assembly-CSharp::TurretSO
   dischargePrefab: {fileID: 0}
+  fireSFX:
+  - {fileID: 11400000, guid: 6fc66ecb05a40a940aff88de573ebbde, type: 2}
   engageRange: 0
   fireRate: 1
   barrelFireDelay: 0.5

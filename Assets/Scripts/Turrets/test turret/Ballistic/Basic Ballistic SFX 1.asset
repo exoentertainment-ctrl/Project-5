@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a360a0ff909cb14bb6f5cf269433556, type: 3}
+  m_Name: Basic Ballistic SFX 1
+  m_EditorClassIdentifier: Assembly-CSharp::AudioClipSO
+  audioType: 0
+  audioMixer: {fileID: 4797775633348784603, guid: 5efc478e315f141428cfa37215046f56, type: 2}
+  clip: {fileID: 8300000, guid: 129bac40170f14e4392f301baea39b45, type: 3}
+  volume: 0.1
+  pitch: 1
+  loop: 0

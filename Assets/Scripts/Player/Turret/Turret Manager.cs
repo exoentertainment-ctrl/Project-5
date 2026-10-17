@@ -6,6 +6,7 @@ public class TurretManager : MonoBehaviour
 {
     #region  --Serialized Fields --
 
+    [SerializeField] LayerMask layerMask;
     [SerializeField] private UnityEvent<Vector3> aimListeners;
     [SerializeField] private UnityEvent unguidedPrimaryListeners;
     [SerializeField] private UnityEvent<GameObject> guidedPrimaryListeners;
@@ -15,6 +16,7 @@ public class TurretManager : MonoBehaviour
 
     private void Start()
     {
+        
         InputManager.instance?.SetTurretManagerListener(InvokeFireListeners);
     }
     
@@ -40,7 +42,7 @@ public class TurretManager : MonoBehaviour
         Ray screenRay = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         RaycastHit hitInfo;
         
-        if (Physics.Raycast(screenRay, out hitInfo, Mathf.Infinity))
+        if (Physics.Raycast(screenRay, out hitInfo, Mathf.Infinity, layerMask))
             guidedPrimaryListeners?.Invoke(hitInfo.collider.gameObject);
     }
 }

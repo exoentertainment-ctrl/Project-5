@@ -63,6 +63,20 @@ public class InputManager : MonoBehaviour
     {
         
     }
-    
+
+    public void MouseScroll(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            if (context.ReadValue<Vector2>().y > 0)
+            {
+                CameraManager.instance.ScrollIn();
+            }
+            else if(context.ReadValue<Vector2>().y < 0)
+            {
+                CameraManager.instance.ScrollOut();
+            }
+        }
+    }
     #endregion
 }

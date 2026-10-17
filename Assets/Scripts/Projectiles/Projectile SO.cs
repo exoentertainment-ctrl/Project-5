@@ -9,7 +9,7 @@ public class ProjectileSO : ScriptableObject
 
     #endregion
     
-    //public AudioClipSO impactSound;
+    public AudioClipSO[] impactSound;
     public int moveSpeed;
     public int lifetime;
     public float damage;

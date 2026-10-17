@@ -80,12 +80,9 @@ public class ShipHealth : MonoBehaviour, IHealth
             if(shipSO.explosionPrefab.Length  > 0)
                 Instantiate(shipSO.explosionPrefab[Random.Range(0, shipSO.explosionPrefab.Length)],  randomSpot, Quaternion.identity);
             
-            // if(AudioManager.instance != null)
-            //     if(shipSO.smallExplosion  != null)
-            //         AudioManager.instance.PlaySound(shipSO.smallExplosion, transform.position);
-            //         
-
-            //
+            if(AudioManager.instance != null)
+                if(shipSO.smallExplosionSFX  != null)
+                    AudioManager.instance.PlaySound(shipSO.smallExplosionSFX[Random.Range(0, shipSO.smallExplosionSFX.Length)], transform.position);
         }
     }
 

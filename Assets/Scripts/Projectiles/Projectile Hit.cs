@@ -26,12 +26,15 @@ public class ProjectileHit : MonoBehaviour
     
     private void OnCollisionEnter(Collision other)
     {
-        
         other.gameObject.TryGetComponent<IHealth>(out var shipHealth);
         if (shipHealth != null)
         {
             shipHealth.TakeDamage(projectileSO.damage);
         }
+        
+        if(projectileSO.impactSound.Length > 0)
+            if(AudioManager.instance != null)
+                AudioManager.instance.PlaySound(projectileSO.impactSound[Random.Range(0, projectileSO.impactSound.Length)], transform.position);
         
         if(projectileSO.impactPrefab.Length > 0)
              Instantiate(projectileSO.impactPrefab[Random.Range(0, projectileSO.impactPrefab.Length)], other.contacts[0].point, transform.rotation);

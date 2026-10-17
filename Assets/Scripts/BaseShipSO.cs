@@ -24,8 +24,8 @@ public class BaseShipSO : BaseEntitySO
 
     #region SFX Variables
 
-    // public AudioClipSO smallExplosion;
-    // public AudioClipSO finalExplosion;
+    public AudioClipSO[] smallExplosionSFX;
+    // public AudioClipSO finalExplosionSFX;
  
     #endregion
 
