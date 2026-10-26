@@ -16,7 +16,6 @@ public class TurretManager : MonoBehaviour
 
     private void Start()
     {
-        
         InputManager.instance?.SetTurretManagerListener(InvokeFireListeners);
     }
     

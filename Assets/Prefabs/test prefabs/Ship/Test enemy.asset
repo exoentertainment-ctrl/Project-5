@@ -15,9 +15,6 @@ MonoBehaviour:
   maxHealth: 10
   maxShield: 0
   lowShieldPercentage: 0
-  blastRadius: 250
-  blastDamage: 0
-  blastForce: 0
   explosionPrefab:
   - {fileID: 1043624379182380, guid: 2d62aa2c6730e654ca945aa755b91022, type: 3}
   - {fileID: 1824402899247718, guid: 8fcfebb7185485d45bef7a5416410d25, type: 3}
@@ -26,17 +23,21 @@ MonoBehaviour:
   explosionFrequency: 1
   shieldRechargeRate: 0
   shieldDownDuration: 0
-  accelerateForce: 0
-  decelerateForce: 0
-  maxAccelerateForce: 0
-  turnSpeed: 0
+  accelerateForce: 100
+  decelerateForce: 10
+  maxAccelerateForce: 40
+  turnSpeed: 5
+  lookAheadDistance: 25
   obstacleLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   targetLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   smallExplosionSFX:
   - {fileID: 11400000, guid: 819f92d3971da454e8f80aeaf7f45568, type: 2}
+  blastRadius: 250
+  blastDamage: 50
+  blastForce: 0
   finalExplosionPrefab:
   - {fileID: 1854104233019004, guid: de9ee3788be08e3458df26109e3912f3, type: 3}

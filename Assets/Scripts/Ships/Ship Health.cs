@@ -59,6 +59,7 @@ public class ShipHealth : MonoBehaviour, IHealth
                 StartCoroutine(ExplodeRoutine());
             }
         }
+        
     }
 
     IEnumerator ExplodeRoutine()
@@ -88,7 +89,7 @@ public class ShipHealth : MonoBehaviour, IHealth
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Terrain")
+        if (other.gameObject.tag == "Terrain" || other.gameObject.tag == "Structure")
         {
             ExplodeShip(other.contacts[0].point);
         }
@@ -97,16 +98,15 @@ public class ShipHealth : MonoBehaviour, IHealth
     void ExplodeShip(Vector3 pos)
     {
         Instantiate(shipSO.finalExplosionPrefab[Random.Range(0, shipSO.finalExplosionPrefab.Length)], pos, Quaternion.identity);
-        rigidBody.AddExplosionForce( shipSO.blastForce, transform.position, shipSO.blastRadius);
+        //rigidBody.AddExplosionForce( shipSO.blastForce, transform.position, shipSO.blastRadius);
         
         Collider[] colliders = Physics.OverlapSphere(transform.position, shipSO.blastRadius);
         if (colliders.Length > 0)
         {
             foreach (var col in colliders)
             {
-                col.TryGetComponent(out ShipHealth shipHealth);
-                if(shipHealth != null)
-                    shipHealth?.TakeDamage(currentHealth);
+                col.TryGetComponent(out IHealth health);
+                health?.TakeDamage(shipSO.blastDamage);
             }
         }
         

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7514207369179831906}
   - component: {fileID: 5082481985518959776}
   - component: {fileID: 843651490664334557}
+  - component: {fileID: -7508084921220262485}
   m_Layer: 0
   m_Name: Test enemy
   m_TagString: Untagged
@@ -132,6 +133,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   deathFeedbacks: {fileID: 0}
+  showGizmos: 0
 --- !u!54 &843651490664334557
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -159,3 +161,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-7508084921220262485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7653044658133014499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53887a9b32907541ab34d2af4a1f2ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MoveAround
+  isPlayer: 0
+  shipSO: {fileID: 11400000, guid: 6059e2dcb2b43814d97cc2fad95aebe8, type: 2}
+  engines: {fileID: 0}
+  radarStepAmount: 0
+  showGizmos: 0
+  minOrbitRadius: 0
+  maxOrbitRadius: 0

@@ -17,6 +17,7 @@ public class BaseShipSO : BaseEntitySO
     public int decelerateForce;
     public int maxAccelerateForce;
     public float turnSpeed;
+    public int lookAheadDistance;
     public LayerMask obstacleLayerMask;
     public LayerMask targetLayerMask;
 
@@ -31,6 +32,9 @@ public class BaseShipSO : BaseEntitySO
 
     #region Explosion  Variables
     
+    public int blastRadius;
+    public int blastDamage;
+    public int blastForce;
     public GameObject[] finalExplosionPrefab;
 
     #endregion
