@@ -16,12 +16,13 @@ MonoBehaviour:
   - {fileID: 1043624379182380, guid: 2d62aa2c6730e654ca945aa755b91022, type: 3}
   - {fileID: 1824402899247718, guid: 8fcfebb7185485d45bef7a5416410d25, type: 3}
   - {fileID: 1593023632951020, guid: b038f10b3a674b64daf52be8b192f8a5, type: 3}
+  impactSound: []
   moveSpeed: 7000
   lifetime: 10
   damage: 10
   targetLayers:
     serializedVersion: 2
-    m_Bits: 1
-  turnSpeed: 5
+    m_Bits: 512
+  turnSpeed: 10
   coastSpeed: 0
   coastDuration: 0

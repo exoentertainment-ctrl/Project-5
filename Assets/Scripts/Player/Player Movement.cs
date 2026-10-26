@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     #region --Serialize Field--
 
     [SerializeField] private BaseShipSO shipSO;
+    [SerializeField] private GameObject engines;
 
     #endregion
 
@@ -41,6 +42,11 @@ public class PlayerMovement : MonoBehaviour
     public void ChangeAccelerateForce(bool value)
     {
         isAccelerating = value;
+        
+        if(isAccelerating)
+            engines?.SetActive(true);
+        else
+            engines?.SetActive(false);
     }
 
     public void RotateLeft(bool value)
